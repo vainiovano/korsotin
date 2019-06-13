@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korsotin</title>
+    <style type="text/css">
+      body {
+	  text-align: center;
+      }
+      #block {
+	  display: grid;
+	  grid-template-columns: 1fr auto 1fr;
+      }
+      @media (min-width: 861px) {
+	  body {
+	      border: 1px solid black;
+	      margin: 2em;
+	  }
+      }
+      @media (max-width: 860px) {
+	  #block {
+	      display: block;
+	  }
+	  #desktop {
+	      display: none;
+	  }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>KORSOTIN</h1>
+    <div id="block">
+      <div id="desktop">
+	<h2>Työpöytä:</h2>
+	<img src="ohje.png" alt="Paina nappia oikeasta ylänurkasta">
+      </div>
+      <img src="../icons/korso.svg" alt="" height=200>
+      <div>
+	<h2>Kännykkä:</h2>
+	<img src="kännykkäohje1.jpg" alt="Paina nappia oikeasta ylänurkasta">
+	<img src="kännykkäohje2.jpg" alt="Paina Korsoroi-painiketta valikosta">
+      </div>
+    </div>
+    <p>Korsotin muuttaa lähes minkä tahansa sivun (joitain mozillan sivuja ei voi muokata selainlaajennoksella) nuorison ymmärtämälle kielelle. Korsottimen inspiraationa toimi <a href="http://korsoraattori.evvk.com/">korsoraattori</a>, joka ei enää toimi nykyajan https-sivuilla. Korsottimen sammuttaminen lataa kaikki välilehdet uudestaan, jotta sivut palaisivat ennalleen. Voit kokeilla laajennosta tällä sivulla. Älä rämpytä nappia liian nopeasti.</p>
+  </body>
+</html>

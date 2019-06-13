@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "Korsotin",
+    "version": "1.0",
+    "description": "Muuttaa lähes sivun kuin sivun (tiettyjen mozillan sivujen muokkaaminen on estetty) nuorison ymmärtämälle kielelle.",
+    "icons": {
+	"48": "icons/korso-48.png",
+	"96": "icons/korso-96.png"
+    },
+    
+    "permissions": ["<all_urls>"],
+    
+    "browser_action": {
+	"default_icon": {
+	    "32": "icons/korso-harmaa-32.png",
+	    "64": "icons/korso-harmaa-64.png"
+	},
+	"default_title": "Korsoroi"
+    },
+    
+    "background": {
+	"scripts": ["background.js"]
+    },
+    "browser_specific_settings": {
+	"gecko": {
+	    "strict_min_version": "59.0"
+	}
+    }
+}
