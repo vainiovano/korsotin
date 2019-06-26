@@ -16,24 +16,24 @@ function getTextNodesIterator(el) {
 
 function korsota(string) {
     const replaces = [
-        [/ks(?:i(?=\s|$|\.|,))?/g, 'x'],
-        [/ts/g, 'z'],
-        [/lt[aä](?=\s|$|\.|,)/gu, 'lt'],
-        [/ll[aä](?=\s|$|\.|,)/gu, 'l'],
-        [/st[aä](?=\s|$|\.|,)/gu, 'st'],
-        [/ss[aä](?=\s|$|\.|,)/gu, 's']
+        [/ksi?(?=\s|$|\.|,|\?|!)/gu, 'x'],
+        [/ts/gu, 'z'],
+        [/lt[aä](?=\s|$|\.|,|\?|!)/gu, 'lt'],
+        [/ll[aä](?=\s|$|\.|,|\?|!)/gu, 'l'],
+        [/st[aä](?=\s|$|\.|,|\?|!)/gu, 'st'],
+        [/ss[aä](?=\s|$|\.|,|\?|!)/gu, 's']
     ];
     // Valikoitu kokoelma välilyöntejä, jotka voi korvata
     const extra_regexp =
-        /([\wäö,])([\f\n\r\t\v\u0020\u1680\u3000])(?=[\wäö])/gu;
-    const sanat = ["vittu ", "tiätsä ", "niinku ", "totanoin "];
+        /[\wäö,][\f\n\r\t\v\u0020\u1680\u3000][\wäö]/gu;
+    const sanat = [" vittu ", " tiätsä ", " niinku ", " totanoin "];
     const final_replaces = [];
     let match;
     while ((match = extra_regexp.exec(string)) !== null) {
         if (Math.random() > 0.75) {
-            final_replaces.push([match.index, match[0].length, match[
-                1] + match[2] + sanat[
-                Math.floor(Math.random() * sanat.length)]]);
+            final_replaces.push([match.index + 1, match[0].length - 2,
+		  sanat[Math.floor(Math.random() * sanat.length)]
+	    ]);
         }
     }
     for (const [regexp, replacement] of replaces) {
